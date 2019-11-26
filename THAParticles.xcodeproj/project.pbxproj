@@ -1,0 +1,401 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7D3A570C238D17FF00BA9F0C /* THAParticlesView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D3A570B238D17FF00BA9F0C /* THAParticlesView.h */; };
+		7D3A570E238D17FF00BA9F0C /* THAParticlesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A570D238D17FF00BA9F0C /* THAParticlesView.m */; };
+		7D3A5717238D1CBC00BA9F0C /* Particle.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D3A5715238D1CBC00BA9F0C /* Particle.h */; };
+		7D3A5718238D1CBC00BA9F0C /* Particle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A5716238D1CBC00BA9F0C /* Particle.m */; };
+		7D3A571E238D1DCD00BA9F0C /* ParticleGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D3A571C238D1DCD00BA9F0C /* ParticleGenerator.h */; };
+		7D3A571F238D1DCD00BA9F0C /* ParticleGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A571D238D1DCD00BA9F0C /* ParticleGenerator.m */; };
+		7DBEEFFE238D21D9004CFDBA /* ParticlePool.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DBEEFFC238D21D9004CFDBA /* ParticlePool.h */; };
+		7DBEEFFF238D21D9004CFDBA /* ParticlePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBEEFFD238D21D9004CFDBA /* ParticlePool.m */; };
+		7DBEF003238D24FF004CFDBA /* ParticleHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DBEF001238D24FF004CFDBA /* ParticleHandler.h */; };
+		7DBEF004238D24FF004CFDBA /* ParticleHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBEF002238D24FF004CFDBA /* ParticleHandler.m */; };
+		7DBEF008238D33B5004CFDBA /* GradientView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DBEF006238D33B5004CFDBA /* GradientView.h */; };
+		7DBEF009238D33B5004CFDBA /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBEF007238D33B5004CFDBA /* GradientView.m */; };
+		7DBEF00D238D3C01004CFDBA /* PreviewToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DBEF00B238D3C01004CFDBA /* PreviewToken.h */; };
+		7DBEF00E238D3C01004CFDBA /* PreviewToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBEF00C238D3C01004CFDBA /* PreviewToken.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7D3A5708238D17FF00BA9F0C /* THAParticles.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = THAParticles.saver; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D3A570B238D17FF00BA9F0C /* THAParticlesView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THAParticlesView.h; sourceTree = "<group>"; };
+		7D3A570D238D17FF00BA9F0C /* THAParticlesView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THAParticlesView.m; sourceTree = "<group>"; };
+		7D3A570F238D17FF00BA9F0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D3A5715238D1CBC00BA9F0C /* Particle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Particle.h; sourceTree = "<group>"; };
+		7D3A5716238D1CBC00BA9F0C /* Particle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Particle.m; sourceTree = "<group>"; };
+		7D3A571C238D1DCD00BA9F0C /* ParticleGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParticleGenerator.h; sourceTree = "<group>"; };
+		7D3A571D238D1DCD00BA9F0C /* ParticleGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParticleGenerator.m; sourceTree = "<group>"; };
+		7DBEEFFC238D21D9004CFDBA /* ParticlePool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParticlePool.h; sourceTree = "<group>"; };
+		7DBEEFFD238D21D9004CFDBA /* ParticlePool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParticlePool.m; sourceTree = "<group>"; };
+		7DBEF001238D24FF004CFDBA /* ParticleHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParticleHandler.h; sourceTree = "<group>"; };
+		7DBEF002238D24FF004CFDBA /* ParticleHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParticleHandler.m; sourceTree = "<group>"; };
+		7DBEF006238D33B5004CFDBA /* GradientView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
+		7DBEF007238D33B5004CFDBA /* GradientView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
+		7DBEF00B238D3C01004CFDBA /* PreviewToken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreviewToken.h; sourceTree = "<group>"; };
+		7DBEF00C238D3C01004CFDBA /* PreviewToken.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreviewToken.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7D3A5705238D17FF00BA9F0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7D3A56FE238D17FF00BA9F0C = {
+			isa = PBXGroup;
+			children = (
+				7D3A570A238D17FF00BA9F0C /* THAParticles */,
+				7D3A5709238D17FF00BA9F0C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7D3A5709238D17FF00BA9F0C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7D3A5708238D17FF00BA9F0C /* THAParticles.saver */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7D3A570A238D17FF00BA9F0C /* THAParticles */ = {
+			isa = PBXGroup;
+			children = (
+				7DBEF00A238D3BE6004CFDBA /* PreviewToken */,
+				7DBEF005238D33A8004CFDBA /* GradientView */,
+				7DBEF000238D24F2004CFDBA /* ParticleHandler */,
+				7D3A571B238D1DBF00BA9F0C /* ParticleGenerator */,
+				7D3A571A238D1D6B00BA9F0C /* ParticlePool */,
+				7D3A5719238D1CC000BA9F0C /* Particle */,
+				7D3A570B238D17FF00BA9F0C /* THAParticlesView.h */,
+				7D3A570D238D17FF00BA9F0C /* THAParticlesView.m */,
+				7D3A570F238D17FF00BA9F0C /* Info.plist */,
+			);
+			path = THAParticles;
+			sourceTree = "<group>";
+		};
+		7D3A5719238D1CC000BA9F0C /* Particle */ = {
+			isa = PBXGroup;
+			children = (
+				7D3A5715238D1CBC00BA9F0C /* Particle.h */,
+				7D3A5716238D1CBC00BA9F0C /* Particle.m */,
+			);
+			path = Particle;
+			sourceTree = "<group>";
+		};
+		7D3A571A238D1D6B00BA9F0C /* ParticlePool */ = {
+			isa = PBXGroup;
+			children = (
+				7DBEEFFC238D21D9004CFDBA /* ParticlePool.h */,
+				7DBEEFFD238D21D9004CFDBA /* ParticlePool.m */,
+			);
+			path = ParticlePool;
+			sourceTree = "<group>";
+		};
+		7D3A571B238D1DBF00BA9F0C /* ParticleGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				7D3A571C238D1DCD00BA9F0C /* ParticleGenerator.h */,
+				7D3A571D238D1DCD00BA9F0C /* ParticleGenerator.m */,
+			);
+			path = ParticleGenerator;
+			sourceTree = "<group>";
+		};
+		7DBEF000238D24F2004CFDBA /* ParticleHandler */ = {
+			isa = PBXGroup;
+			children = (
+				7DBEF001238D24FF004CFDBA /* ParticleHandler.h */,
+				7DBEF002238D24FF004CFDBA /* ParticleHandler.m */,
+			);
+			path = ParticleHandler;
+			sourceTree = "<group>";
+		};
+		7DBEF005238D33A8004CFDBA /* GradientView */ = {
+			isa = PBXGroup;
+			children = (
+				7DBEF006238D33B5004CFDBA /* GradientView.h */,
+				7DBEF007238D33B5004CFDBA /* GradientView.m */,
+			);
+			path = GradientView;
+			sourceTree = "<group>";
+		};
+		7DBEF00A238D3BE6004CFDBA /* PreviewToken */ = {
+			isa = PBXGroup;
+			children = (
+				7DBEF00B238D3C01004CFDBA /* PreviewToken.h */,
+				7DBEF00C238D3C01004CFDBA /* PreviewToken.m */,
+			);
+			path = PreviewToken;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7D3A5703238D17FF00BA9F0C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D3A5717238D1CBC00BA9F0C /* Particle.h in Headers */,
+				7D3A571E238D1DCD00BA9F0C /* ParticleGenerator.h in Headers */,
+				7DBEF003238D24FF004CFDBA /* ParticleHandler.h in Headers */,
+				7DBEF00D238D3C01004CFDBA /* PreviewToken.h in Headers */,
+				7DBEF008238D33B5004CFDBA /* GradientView.h in Headers */,
+				7DBEEFFE238D21D9004CFDBA /* ParticlePool.h in Headers */,
+				7D3A570C238D17FF00BA9F0C /* THAParticlesView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7D3A5707238D17FF00BA9F0C /* THAParticles */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D3A5712238D17FF00BA9F0C /* Build configuration list for PBXNativeTarget "THAParticles" */;
+			buildPhases = (
+				7D3A5703238D17FF00BA9F0C /* Headers */,
+				7D3A5704238D17FF00BA9F0C /* Sources */,
+				7D3A5705238D17FF00BA9F0C /* Frameworks */,
+				7D3A5706238D17FF00BA9F0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = THAParticles;
+			productName = THAParticles;
+			productReference = 7D3A5708238D17FF00BA9F0C /* THAParticles.saver */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7D3A56FF238D17FF00BA9F0C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = "Thwin Htoo Aung";
+				TargetAttributes = {
+					7D3A5707238D17FF00BA9F0C = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 7D3A5702238D17FF00BA9F0C /* Build configuration list for PBXProject "THAParticles" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7D3A56FE238D17FF00BA9F0C;
+			productRefGroup = 7D3A5709238D17FF00BA9F0C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7D3A5707238D17FF00BA9F0C /* THAParticles */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7D3A5706238D17FF00BA9F0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7D3A5704238D17FF00BA9F0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DBEF00E238D3C01004CFDBA /* PreviewToken.m in Sources */,
+				7D3A570E238D17FF00BA9F0C /* THAParticlesView.m in Sources */,
+				7D3A571F238D1DCD00BA9F0C /* ParticleGenerator.m in Sources */,
+				7DBEF004238D24FF004CFDBA /* ParticleHandler.m in Sources */,
+				7D3A5718238D1CBC00BA9F0C /* Particle.m in Sources */,
+				7DBEF009238D33B5004CFDBA /* GradientView.m in Sources */,
+				7DBEEFFF238D21D9004CFDBA /* ParticlePool.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7D3A5710238D17FF00BA9F0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7D3A5711238D17FF00BA9F0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7D3A5713238D17FF00BA9F0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = DPR5A39Y9M;
+				INFOPLIST_FILE = THAParticles/Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				PRODUCT_BUNDLE_IDENTIFIER = com.thwinhtooaung.THAParticles;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = saver;
+			};
+			name = Debug;
+		};
+		7D3A5714238D17FF00BA9F0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = DPR5A39Y9M;
+				INFOPLIST_FILE = THAParticles/Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				PRODUCT_BUNDLE_IDENTIFIER = com.thwinhtooaung.THAParticles;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = saver;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7D3A5702238D17FF00BA9F0C /* Build configuration list for PBXProject "THAParticles" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D3A5710238D17FF00BA9F0C /* Debug */,
+				7D3A5711238D17FF00BA9F0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D3A5712238D17FF00BA9F0C /* Build configuration list for PBXNativeTarget "THAParticles" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D3A5713238D17FF00BA9F0C /* Debug */,
+				7D3A5714238D17FF00BA9F0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7D3A56FF238D17FF00BA9F0C /* Project object */;
+}
