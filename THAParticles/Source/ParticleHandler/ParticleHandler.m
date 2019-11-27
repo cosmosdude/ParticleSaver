@@ -41,6 +41,28 @@
 //                    if ([p isInVacinityOf:pp]) {
                     [p markVacinityLineTo:pp usingLine:_vacinityLine];
 //                    }
+                    
+                    if ([p collidesWith: pp]) {
+                        
+                        // if both p and pp is slower nor faster together
+                        // switch their sides
+//                        if ( !((p.vX < 0 && pp.vX < 0) || (p.vX > 0 && pp.vX > 0)) ) {
+//                            p.vX *= -1;
+//                            pp.vX *= -1;
+//                        }
+//
+//
+//                        if (!((p.vY < 0 && pp.vY < 0) || (p.vY > 0 && pp.vY > 0))) {
+//                            p.vX *= -1;
+//                            pp.vX *= -1;
+//                        }
+                        
+                        if ( fabs(p.vX) > 0.25 ) p.vX *= 0.99;
+                        if ( fabs(p.vY) > 0.25 ) p.vY *= 0.99;
+
+                        if ( fabs(pp.vX) > 0.25 ) pp.vX *= 0.99;
+                        if ( fabs(pp.vY) > 0.25 ) pp.vY *= 0.99;
+                    }
                 }
             }
         }
@@ -70,15 +92,17 @@
     c.y += p.vY;
     p.center = c;
     
-    if (c.x < -100) {
+    CGFloat range = 10;
+    
+    if (c.x < -range) {
         p.vX = [ParticleGenerator generateVelocity];
-    } else if (c.x > (_rect.size.width+100)) {
+    } else if (c.x > (_rect.size.width+range)) {
         p.vX = [ParticleGenerator generateVelocity] * -1;
     }
     
-    if (c.y < -100) {
+    if (c.y < -range) {
         p.vY = [ParticleGenerator generateVelocity];
-    } else if (c.y > (_rect.size.height+100) ) {
+    } else if (c.y > (_rect.size.height+range) ) {
         p.vY = [ParticleGenerator generateVelocity] * -1;
     }
 }

@@ -15,14 +15,14 @@
 #import "GradientView.h"
 #import "PreviewToken.h"
 
+#import "ParticleView.h"
+
 BOOL isPreview = false;
 
 @interface THAParticlesView : ScreenSaverView
 {
-    ParticlePool * pool;
-    ParticleHandler * handler;
-    GradientView* maskView;
-    
-    NSColor * bgColor;
+    ParticleView* contentView;
+//    NSGradient * gradient;
+    CAGradientLayer * gradientLayer;
 }
 @end

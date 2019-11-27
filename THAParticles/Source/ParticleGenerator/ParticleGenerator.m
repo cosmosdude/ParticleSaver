@@ -23,7 +23,7 @@
     if (PreviewToken.isPreview) {
         p.size = (NSSize) {2, 2};
     } else {
-        p.size = (NSSize) {5, 5};
+        p.size = (NSSize) {8, 8};
     }
     
     
@@ -41,9 +41,9 @@
 + (CGFloat)generateVelocity {
     
     if (PreviewToken.isPreview) {
-        return SSRandomFloatBetween(0.25, 0.5);
+        return SSRandomFloatBetween(0.1, 0.5);
     } else {
-        return SSRandomFloatBetween(0.25, 2);
+        return SSRandomFloatBetween(0.1, 2);
     }
     
     

@@ -27,7 +27,7 @@
     return self;
 }
 
--(BOOL) isInVacinityOf: (Particle *) p {
+-(BOOL) collidesWith: (Particle *) p {
     // Pythagoras triangle sides. c is the hypotenue.
     CGFloat a, b, c;
     
@@ -38,7 +38,9 @@
     b = b*b;
     c = a + b;
     
-    return c <= maxVacinity;
+    CGFloat r = (p.size.width/2) + (_size.width/2);
+    r *= r;
+    return c <= r;
 }
 
 -(void) markVacinityLineTo: (Particle *) p usingLine: (NSBezierPath *)line {
@@ -56,21 +58,19 @@
         [line moveToPoint:_center];
         [line lineToPoint:p.center];
         
-//        CGFloat total = maxVacinity - minVacinity;
+
         CGFloat current = c / maxVacinity;
-//        current -= 0.5;
+
         if (current < 0) current = 0;
         
         current = 1-current;
-//        // at lest 0.25 is assured.
-//        current = (current * 0.75);
         
-        [[NSColor colorWithWhite:0.5 alpha:current] setStroke];
+        [[NSColor colorWithWhite:1 alpha:current * 0.5] setStroke];
         
         if (PreviewToken.isPreview) {
             [line setLineWidth: current * 1];
         } else {
-            [line setLineWidth: current * 2];
+            [line setLineWidth: current * 1];
         }
         
         
@@ -104,8 +104,11 @@
     p.y -= _size.height / 2;
     [_ctx appendBezierPathWithOvalInRect:(NSRect) {p, _size}];
     
-    [NSColor.whiteColor setFill];
+    [NSColor.blackColor setFill];
     [_ctx fill];
+    
+    [NSColor.whiteColor setStroke];
+    [_ctx stroke];
     
     // remove all points after drawing.
     [_ctx removeAllPoints];

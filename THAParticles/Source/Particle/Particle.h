@@ -29,7 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 -(id) init;
--(BOOL) isInVacinityOf: (Particle *) p;
+
+-(BOOL) collidesWith: (Particle *) p;
 -(void) markVacinityLineTo: (Particle *)p usingLine: (NSBezierPath *)line;
 -(void) draw;
 
