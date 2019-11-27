@@ -13,16 +13,34 @@
 - (instancetype)init {
     self = [super init];
     if(self) {
+        
+        // initialize the vacinity line.
         _vacinityLine = [NSBezierPath new];
-        [_vacinityLine setLineWidth: 1];
     }
     return self;
 }
 
 - (void) calculateAndDraw {
     if (self.pool) {
-//        [self drawParticles];
         
+        /*
+         [First]
+         All of the particles are moved.
+         SPEED = O(n)
+         
+         [Second]
+         Each of the particles test collision with all other particles
+         and draw line accordingly.
+         
+         SPEED = O(n^2)
+         
+         [Third]
+         Each particle draw their graphics separately.
+         SPEED = O(n)
+         
+         All calculations are done on one cpu.
+         TOTAL_SPEED = O(n^2)
+         */
         
         
         for( register int i = 0; i < _pool.items.count; i++) {
@@ -32,53 +50,58 @@
             [self moveParticle:p];
         }
         
+        // loop through particles.
         for( register int i = 0; i < _pool.items.count; i++ ) {
+            
+            // for each particle
             Particle * p = [_pool.items objectAtIndex:i];
             
-            for(int ii = 0; ii < _pool.items.count; ii++) {
+            // loop through all other particles
+            // and draw path
+            for(register int ii = 0; ii < _pool.items.count; ii++) {
+                
+                // get another particle
                 Particle * pp = [_pool.items objectAtIndex:ii];
+                
+                // of the current particle is not the same
+                // with the targeted another particle.
                 if (p != pp) {
-//                    if ([p isInVacinityOf:pp]) {
-                    [p markVacinityLineTo:pp usingLine:_vacinityLine];
-//                    }
                     
+                    // draw vacinity line using relative distance between them.
+                    //
+                    // particle
+                    [p markVacinityLineTo:pp usingLine:_vacinityLine];
+                    
+                    
+                    
+                    // if the two particles collide each other,
+                    // reduce their speed.
                     if ([p collidesWith: pp]) {
                         
-                        // if both p and pp is slower nor faster together
-                        // switch their sides
-//                        if ( !((p.vX < 0 && pp.vX < 0) || (p.vX > 0 && pp.vX > 0)) ) {
-//                            p.vX *= -1;
-//                            pp.vX *= -1;
-//                        }
-//
-//
-//                        if (!((p.vY < 0 && pp.vY < 0) || (p.vY > 0 && pp.vY > 0))) {
-//                            p.vX *= -1;
-//                            pp.vX *= -1;
-//                        }
+                        CGPoint v1 = p.velocity;
+                        CGPoint v2 = pp.velocity;
                         
-                        if ( fabs(p.vX) > 0.25 ) p.vX *= 0.99;
-                        if ( fabs(p.vY) > 0.25 ) p.vY *= 0.99;
-
-                        if ( fabs(pp.vX) > 0.25 ) pp.vX *= 0.99;
-                        if ( fabs(pp.vY) > 0.25 ) pp.vY *= 0.99;
+                        // reduce both speed of first particle.
+                        if ( fabs(v1.x) > 0.25 ) v1.x *= 0.99;
+                        if ( fabs(v1.y) > 0.25 ) v1.y *= 0.99;
+                        // reduce both speed of second particle.
+                        if ( fabs(v2.x) > 0.25 ) v2.x *= 0.99;
+                        if ( fabs(v2.y) > 0.25 ) v2.y *= 0.99;
+                        
+                        p.velocity = v1;
+                        pp.velocity = v2;
                     }
                 }
             }
         }
         
+        
+        // loop through all of the particles.
         for( register int i = 0; i < _pool.items.count; i++) {
             Particle * p = [_pool.items objectAtIndex:i];
             
-            // move the particle
-            [self moveParticle:p];
-            
-            // draw the particle
+            // tell the particle to issue draw commands.
             [p draw];
-            
-//            [[NSColor whiteColor] setStroke];
-//            [_vacinityLine stroke];
-//            [_vacinityLine removeAllPoints];
         }
         
         
@@ -87,24 +110,49 @@
 }
 
 - (void) moveParticle: (Particle *) p {
+    
+    // get the point of the center of particle for further manipulation.
     NSPoint c = p.center;
-    c.x += p.vX;
-    c.y += p.vY;
-    p.center = c;
+    c.x += p.velocity.x; // move x
+    c.y += p.velocity.y; // move y
+    p.center = c; // reassign value.
     
-    CGFloat range = 10;
+    CGFloat range = 10; // extra bounding box range.
     
-    if (c.x < -range) {
-        p.vX = [ParticleGenerator generateVelocity];
-    } else if (c.x > (_rect.size.width+range)) {
-        p.vX = [ParticleGenerator generateVelocity] * -1;
+    // left, right, top and bottom bounds.
+    CGFloat kLBound, kRBound, kTBound, kBBound;
+    kLBound = kBBound = -range; // left and bottom edge of the bounding box is the same in value.
+    kRBound = (_rect.size.width+range); // right edge of bounding box.
+    kTBound = (_rect.size.height+range); // top edge of bounding box.
+    
+    CGPoint v = p.velocity;
+    
+    /*
+     if the particle is beyound the left [or] right side of the bounding box,
+     make them move to the opposite side.
+     */
+    if (c.x < kLBound) {
+        // make the particle move right side.
+        v.x = [Generator generateVelocity];
+        
+    } else if (c.x > kRBound) {
+        // make the particle move left side.
+        v.x = [Generator generateVelocity] * -1;
     }
     
-    if (c.y < -range) {
-        p.vY = [ParticleGenerator generateVelocity];
-    } else if (c.y > (_rect.size.height+range) ) {
-        p.vY = [ParticleGenerator generateVelocity] * -1;
+    /*
+    if the particle is beyound the top [or] bottom side of the bounding box,
+    make them move to the opposite side.
+    */
+    if (c.y < kBBound) {
+        // make the particle move upward.
+        v.y = [Generator generateVelocity];
+    } else if (c.y > kTBound ) {
+        // make the particle move downward.
+        v.y = [Generator generateVelocity] * -1;
     }
+    
+    p.velocity = v;
 }
 
 @end

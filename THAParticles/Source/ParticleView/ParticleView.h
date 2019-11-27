@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 #import "Particle.h"
-#import "ParticleGenerator.h"
+#import "Generator.h"
 #import "ParticlePool.h"
 #import "ParticleHandler.h"
 #import "GradientView.h"
@@ -18,18 +18,31 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ParticleView : NSView
-
 {
+    // pool of particles
     ParticlePool * pool;
+    
+    // particle handler
     ParticleHandler * handler;
-    NSColor * bgColor;
     
     BOOL isAnimating;
 }
 
+/// Instantiate a particle playground view with a specific frame.
+///
+/// @param frame Initial frame of the playground.
+/// @param isPreview Specify whether the playground is intended for preview in settings.
+///
 - (instancetype)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview;
+
+
+/// Tells the playground that the animation timer has started.
 -(void) startAnimation;
+
+/// Tells the playground that the animation engine want one frame of drawing.
 -(void) animateOneFrame;
+
+/// Tells the playground that the animation timer has stopped.
 -(void) stopAnimation;
 
 @end

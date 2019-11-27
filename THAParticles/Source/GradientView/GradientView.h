@@ -6,8 +6,14 @@
 //  Copyright © 2019 Thwin Htoo Aung. All rights reserved.
 //
 
+
+
 #import <Cocoa/Cocoa.h>
 @import QuartzCore;
+
+//////////////////////////////
+/// This class is not used ///
+//////////////////////////////
 
 NS_ASSUME_NONNULL_BEGIN
 

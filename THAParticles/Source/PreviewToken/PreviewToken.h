@@ -11,7 +11,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PreviewToken : NSObject
+
+/// Indicate whether the screen saver is in preview mode.
 +(BOOL) isPreview;
+/// setter property of isPreview property.
 +(void) setIsPreview:(BOOL) preview;
 @end
 

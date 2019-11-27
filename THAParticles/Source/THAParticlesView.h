@@ -9,7 +9,7 @@
 #import <ScreenSaver/ScreenSaver.h>
 
 #import "Particle.h"
-#import "ParticleGenerator.h"
+#import "Generator.h"
 #import "ParticlePool.h"
 #import "ParticleHandler.h"
 #import "GradientView.h"
@@ -21,8 +21,10 @@ BOOL isPreview = false;
 
 @interface THAParticlesView : ScreenSaverView
 {
+    // particle playground view
     ParticleView* contentView;
-//    NSGradient * gradient;
+    
+    // backing gradient view layer.
     CAGradientLayer * gradientLayer;
 }
 @end

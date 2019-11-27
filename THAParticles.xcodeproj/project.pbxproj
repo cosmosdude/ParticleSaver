@@ -11,8 +11,8 @@
 		7D3A570E238D17FF00BA9F0C /* THAParticlesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A570D238D17FF00BA9F0C /* THAParticlesView.m */; };
 		7D3A5717238D1CBC00BA9F0C /* Particle.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D3A5715238D1CBC00BA9F0C /* Particle.h */; };
 		7D3A5718238D1CBC00BA9F0C /* Particle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A5716238D1CBC00BA9F0C /* Particle.m */; };
-		7D3A571E238D1DCD00BA9F0C /* ParticleGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D3A571C238D1DCD00BA9F0C /* ParticleGenerator.h */; };
-		7D3A571F238D1DCD00BA9F0C /* ParticleGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A571D238D1DCD00BA9F0C /* ParticleGenerator.m */; };
+		7D3A571E238D1DCD00BA9F0C /* Generator.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D3A571C238D1DCD00BA9F0C /* Generator.h */; };
+		7D3A571F238D1DCD00BA9F0C /* Generator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A571D238D1DCD00BA9F0C /* Generator.m */; };
 		7DB35B7F238E8350002031D1 /* ParticleView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DB35B7D238E8350002031D1 /* ParticleView.h */; };
 		7DB35B80238E8350002031D1 /* ParticleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB35B7E238E8350002031D1 /* ParticleView.m */; };
 		7DBEEFFE238D21D9004CFDBA /* ParticlePool.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DBEEFFC238D21D9004CFDBA /* ParticlePool.h */; };
@@ -32,8 +32,8 @@
 		7D3A570F238D17FF00BA9F0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D3A5715238D1CBC00BA9F0C /* Particle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Particle.h; sourceTree = "<group>"; };
 		7D3A5716238D1CBC00BA9F0C /* Particle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Particle.m; sourceTree = "<group>"; };
-		7D3A571C238D1DCD00BA9F0C /* ParticleGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParticleGenerator.h; sourceTree = "<group>"; };
-		7D3A571D238D1DCD00BA9F0C /* ParticleGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParticleGenerator.m; sourceTree = "<group>"; };
+		7D3A571C238D1DCD00BA9F0C /* Generator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Generator.h; sourceTree = "<group>"; };
+		7D3A571D238D1DCD00BA9F0C /* Generator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Generator.m; sourceTree = "<group>"; };
 		7DB35B7D238E8350002031D1 /* ParticleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParticleView.h; sourceTree = "<group>"; };
 		7DB35B7E238E8350002031D1 /* ParticleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParticleView.m; sourceTree = "<group>"; };
 		7DBEEFFC238D21D9004CFDBA /* ParticlePool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParticlePool.h; sourceTree = "<group>"; };
@@ -103,8 +103,8 @@
 		7D3A571B238D1DBF00BA9F0C /* ParticleGenerator */ = {
 			isa = PBXGroup;
 			children = (
-				7D3A571C238D1DCD00BA9F0C /* ParticleGenerator.h */,
-				7D3A571D238D1DCD00BA9F0C /* ParticleGenerator.m */,
+				7D3A571C238D1DCD00BA9F0C /* Generator.h */,
+				7D3A571D238D1DCD00BA9F0C /* Generator.m */,
 			);
 			path = ParticleGenerator;
 			sourceTree = "<group>";
@@ -170,7 +170,7 @@
 			files = (
 				7D3A5717238D1CBC00BA9F0C /* Particle.h in Headers */,
 				7DB35B7F238E8350002031D1 /* ParticleView.h in Headers */,
-				7D3A571E238D1DCD00BA9F0C /* ParticleGenerator.h in Headers */,
+				7D3A571E238D1DCD00BA9F0C /* Generator.h in Headers */,
 				7DBEF003238D24FF004CFDBA /* ParticleHandler.h in Headers */,
 				7DBEF00D238D3C01004CFDBA /* PreviewToken.h in Headers */,
 				7DBEF008238D33B5004CFDBA /* GradientView.h in Headers */,
@@ -249,7 +249,7 @@
 			files = (
 				7DBEF00E238D3C01004CFDBA /* PreviewToken.m in Sources */,
 				7D3A570E238D17FF00BA9F0C /* THAParticlesView.m in Sources */,
-				7D3A571F238D1DCD00BA9F0C /* ParticleGenerator.m in Sources */,
+				7D3A571F238D1DCD00BA9F0C /* Generator.m in Sources */,
 				7DBEF004238D24FF004CFDBA /* ParticleHandler.m in Sources */,
 				7D3A5718238D1CBC00BA9F0C /* Particle.m in Sources */,
 				7DB35B80238E8350002031D1 /* ParticleView.m in Sources */,

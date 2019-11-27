@@ -14,16 +14,22 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // [self setAnimationTimeInterval:1/30.0];
+        // initially set the isAnimating property to NO.
         isAnimating = NO;
         
+        // if it is preview
         if (PreviewToken.isPreview) {
+            
+            // make a small pool of particles for fitting inside a small draw area.
             pool = [[ParticlePool alloc] initWithParticleLimit:15];
         } else {
+            // otherwise, make a large pool of particles for fitting inside a large screen.
             pool = [[ParticlePool alloc] initWithParticleLimit:75];
         }
         
+        // make handle
         handler = [ParticleHandler new];
+        // and give it a target pool of particles.
         handler.pool = pool;
     }
     return self;
@@ -31,32 +37,36 @@
 
 - (void)startAnimation
 {
-    // explicit isAnimating property
+    // explicit isAnimating property set to YES
     isAnimating = YES;
 }
 
 - (void)stopAnimation
 {
-    // explicit isAnimating property set
+    // explicit isAnimating property set to NO
     isAnimating = NO;
 }
 
 - (void)drawRect:(NSRect)rect
 {
-    [super drawRect:rect];
+    [super drawRect:rect]; // this usually does nothing
     
+    // let handler retain current drawing parameter
     handler.rect = rect;
-    
-    // set background color
-    // NSBezierPath * bg = [NSBezierPath bezierPathWithRect: rect];
-    // [bgColor setFill];
-    // [bg fill];
     
     // only if the view is animating
     if (isAnimating) {
-        // make particle
-        [pool fillParticle: [ParticleGenerator generateParticleWithinRect:rect] ];
         
+        // make particle and add it to the particle pool.
+        // even though particle pool can automatically stop retaining given particle
+        // isFull is tested to optimize object allocations.
+        if ([pool isFull] == NO) {
+            
+            // make a particle from random particle generator and add it to the pool.
+            [pool fillParticle: [Generator generateParticleWithinRect:rect]];
+        }
+        
+        // tell the handle to calculate and draw particles.
         [handler calculateAndDraw];
     }
 }
