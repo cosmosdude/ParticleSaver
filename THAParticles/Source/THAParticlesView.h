@@ -8,23 +8,24 @@
 
 #import <ScreenSaver/ScreenSaver.h>
 
-#import "Particle.h"
-#import "Generator.h"
-#import "ParticlePool.h"
-#import "ParticleHandler.h"
-#import "GradientView.h"
-#import "PreviewToken.h"
-
+#import "PreferencesHandler.h"
+#import "PreferencesWindowController.h"
 #import "ParticleView.h"
 
 BOOL isPreview = false;
 
 @interface THAParticlesView : ScreenSaverView
 {
+    NSArray<id> * gradientColors;
+    NSArray<id> * whiteColors;
+    
     // particle playground view
     ParticleView* contentView;
     
     // backing gradient view layer.
     CAGradientLayer * gradientLayer;
+    
+    // Preferences controller
+    PreferencesWindowController * preferences;
 }
 @end

@@ -4,6 +4,10 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Resources/PreferencesWindowController.nib</key>
+		<data>
+		B4M2yaz39Y2wjoD7JrvmAcGj15U=
+		</data>
 		<key>Resources/Trimmed.gif</key>
 		<data>
 		Ys5+ZZmXDyjk1IEYF1bbwKn1hck=
@@ -19,6 +23,13 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Resources/PreferencesWindowController.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			oSAuZoSURggl6zIT7vCz07ZH97X+TgjeZKBCKy9L4PU=
+			</data>
+		</dict>
 		<key>Resources/Trimmed.gif</key>
 		<dict>
 			<key>hash2</key>

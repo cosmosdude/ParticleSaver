@@ -10,6 +10,7 @@
 @import Cocoa;
 
 #import "PreviewToken.h"
+#import "PreferencesHandler.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

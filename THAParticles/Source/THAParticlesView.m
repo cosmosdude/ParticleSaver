@@ -22,6 +22,33 @@
     if (self) {
         [self setAnimationTimeInterval:1/30.0];
         
+        
+        gradientColors = @[
+            (id)[[NSColor whiteColor] CGColor],
+            (id)[[NSColor systemBlueColor] CGColor],
+            (id)[[NSColor systemGreenColor] CGColor],
+            (id)[[NSColor systemIndigoColor] CGColor],
+            (id)[[NSColor systemOrangeColor] CGColor],
+            (id)[[NSColor systemPinkColor] CGColor],
+            (id)[[NSColor systemPurpleColor] CGColor],
+            (id)[[NSColor systemRedColor] CGColor],
+            (id)[[NSColor systemTealColor] CGColor],
+            (id)[[NSColor systemYellowColor] CGColor],
+            (id)[[NSColor whiteColor] CGColor]
+        ];
+        
+        whiteColors = @[
+            (id)[[NSColor whiteColor] CGColor],
+            (id)[[NSColor whiteColor] CGColor],
+            (id)[[NSColor whiteColor] CGColor],
+            (id)[[NSColor whiteColor] CGColor]
+        ];
+        
+        
+        preferences = [[PreferencesWindowController alloc] init];
+        [preferences loadWindow];
+        [[preferences window] close];
+        
         // check if the saver is in preview mode.
         // if the rectangle is the same as screen rectangle, it's not preview.
         // otherwise, it's preview.
@@ -38,14 +65,15 @@
         // make particle view as mask.
         self.layer.mask = contentView.layer;
         
-        // draw beautiful gradients.
-        [gradientLayer setColors:@[
-            (id)[[NSColor systemBlueColor] CGColor],
-            (id)[[NSColor systemIndigoColor] CGColor],
-            (id)[[NSColor systemPinkColor] CGColor],
-            (id)[[NSColor systemPurpleColor] CGColor],
-            (id)[[NSColor systemRedColor] CGColor]
-        ]];
+        if (PreferencesHandler.sharedInstance.isBlackAndWhiteTheme) {
+            // draw beautiful gradients.
+            [gradientLayer setColors: whiteColors];
+        } else {
+            // draw beautiful gradients.
+            [gradientLayer setColors: gradientColors];
+        }
+        
+        
         
         // make gradient start at lower-left
         [gradientLayer setStartPoint:(CGPoint){0, 0}];
@@ -84,12 +112,15 @@
 
 - (BOOL)hasConfigureSheet
 {
-    return NO;
+    return YES;
 }
 
 - (NSWindow*)configureSheet
 {
-    return nil;
+    if ([preferences isWindowLoaded] == NO) {
+        
+    }
+    return preferences.window;
 }
 
 @end

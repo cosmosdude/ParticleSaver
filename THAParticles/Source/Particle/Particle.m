@@ -120,6 +120,8 @@
 
 -(void) draw {
     
+    if ([[PreferencesHandler sharedInstance] shouldShowCircles] == NO) return;
+    
     // retain the center point.
     CGPoint p = _center;
     // start x of the rectangle is the half width minus it's center x.
