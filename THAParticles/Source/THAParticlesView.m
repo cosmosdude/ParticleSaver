@@ -64,6 +64,7 @@
         
         // set self to use layer.
         [self setWantsLayer:YES];
+        self.layer.backgroundColor = [[NSColor blackColor] CGColor];
         
         // make particle view.
         contentView = [[ParticleView alloc] initWithFrame:frame isPreview:isPreview];
