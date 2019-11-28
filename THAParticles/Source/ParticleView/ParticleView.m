@@ -64,8 +64,17 @@
         // isFull is tested to optimize object allocations.
         if ([pool isFull] == NO) {
             
-            // make a particle from random particle generator and add it to the pool.
-            [pool fillParticle: [Generator generateParticleWithinRect:rect]];
+            if (PreferencesHandler.sharedInstance.smoothAppearance == PreferencesSmoothAppearanceStyleFadeIn) {
+                while([pool isFull] == NO) {
+                    // make a particle from random particle generator and add it to the pool.
+                    [pool fillParticle: [Generator generateParticleWithinRect:rect]];
+                }
+            } else {
+                // make a particle from random particle generator and add it to the pool.
+                [pool fillParticle: [Generator generateParticleWithinRect:rect]];
+            }
+            
+            
         }
         
         // tell the handle to calculate and draw particles.

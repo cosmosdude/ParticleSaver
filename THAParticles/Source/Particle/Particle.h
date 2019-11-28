@@ -33,6 +33,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// Velocity of the particle.
 @property CGPoint velocity;
 
+/// Alpha of the particle.
+@property CGFloat alpha;
+
 /// Initialize a particle with default values.
 -(id) init;
 

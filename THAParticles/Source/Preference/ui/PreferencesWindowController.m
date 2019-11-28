@@ -40,10 +40,23 @@
     [_buttonForThemeSelection selectItemAtIndex: isBNG];
     [_buttonForThemeSelection setTitle: [themeNames objectAtIndex:isBNG] ];
     
+    
+    NSArray<NSString *> * smoothAppearanceNames = @[
+        @"Sudden",
+        @"Single Fade In",
+        @"All Fade In"
+    ];
+    
+    NSInteger smoothAppearance = PreferencesHandler.sharedInstance.smoothAppearance;
+    [_buttonForShouldSmoothAppearance removeAllItems];
+    [_buttonForShouldSmoothAppearance addItemsWithTitles: smoothAppearanceNames];
+    [_buttonForShouldSmoothAppearance selectItemAtIndex: smoothAppearanceNames];
+    [_buttonForShouldSmoothAppearance setTitle: [smoothAppearanceNames objectAtIndex:smoothAppearance]];
+    
 
     particleLimitNames = @[
         @"Few", // 25
-        @"Normal", // 50
+        @"Intermediate", // 50
         @"Many", // 75
         @"Too Many" // 100
     ];
@@ -77,10 +90,14 @@
 }
 
 - (IBAction)actionForHideShowCircles:(id)sender {
-    
     NSButton * btn = sender;
     [[PreferencesHandler sharedInstance] setShouldShowCircles: ([btn state] == NSControlStateValueOn)];
-    
+}
+
+
+- (IBAction)actionForSmoothAppearanceSelection:(id)sender {
+    NSPopUpButton* btn = sender;
+    [[PreferencesHandler sharedInstance] setSmoothAppearance:btn.indexOfSelectedItem];
 }
 
 - (IBAction)actionForThemeSelection:(id)sender {

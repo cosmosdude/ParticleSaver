@@ -11,6 +11,7 @@
 #import "PreferencesHandler.h"
 #import "PreferencesWindowController.h"
 #import "ParticleView.h"
+#import "GradientView.h"
 
 BOOL isPreview = false;
 
@@ -24,6 +25,8 @@ BOOL isPreview = false;
     
     // backing gradient view layer.
     CAGradientLayer * gradientLayer;
+    
+    GradientView * gradientView;
     
     // Preferences controller
     PreferencesWindowController * preferences;

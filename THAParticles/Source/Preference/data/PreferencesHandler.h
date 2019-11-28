@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
     NSString * kPreferencesKeyIsGradientTheme;
     NSString * kPreferencesKeyParticleCount;
     NSString * kPreferencesKeyParticleSpeed;
+    NSString * kPreferencesKeySmoothAppearance;
 }
 @property(nonatomic) BOOL shouldShowCircles;
 -(BOOL) getShouldShowCircles;
@@ -37,9 +38,21 @@ NS_ASSUME_NONNULL_BEGIN
 -(BOOL) getParticleSpeed;
 -(void) setParticleSpeed:(NSInteger)particleSpeed;
 
+@property(nonatomic) NSInteger smoothAppearance;
+-(NSInteger) getSmoothAppearance;
+-(void) setSmoothAppearance:(NSInteger)smoothAppearance;
+
 - (instancetype)init;
 
 + (instancetype) sharedInstance;
 @end
 
 NS_ASSUME_NONNULL_END
+
+
+
+typedef NS_ENUM(NSInteger, PreferencesSmoothAppearanceStyle) {
+    PreferencesSmoothAppearanceStyleNone = 0,
+    PreferencesSmoothAppearanceStyleRandom = 1,
+    PreferencesSmoothAppearanceStyleFadeIn = 2,
+};

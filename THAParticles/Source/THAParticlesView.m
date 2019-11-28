@@ -22,6 +22,14 @@
     if (self) {
         [self setAnimationTimeInterval:1/30.0];
         
+        // make gradient view
+        gradientView = [GradientView new];
+        // and make it to use layer.
+        gradientView.wantsLayer = YES;
+        
+        [self addSubview:gradientView];
+        
+        [gradientView setFrame:frame];
         
         gradientColors = @[
             (id)[[NSColor whiteColor] CGColor],
@@ -62,23 +70,25 @@
         // make the particle view also use layer.
         [contentView setWantsLayer: YES];
         
+        
+        
         // make particle view as mask.
-        self.layer.mask = contentView.layer;
+        gradientView.layer.mask = contentView.layer;
         
         if (PreferencesHandler.sharedInstance.isBlackAndWhiteTheme) {
             // draw beautiful gradients.
-            [gradientLayer setColors: whiteColors];
+            [gradientView setColors: whiteColors];
         } else {
             // draw beautiful gradients.
-            [gradientLayer setColors: gradientColors];
+            [gradientView setColors: gradientColors];
         }
         
         
         
         // make gradient start at lower-left
-        [gradientLayer setStartPoint:(CGPoint){0, 0}];
+        [gradientView setStartingPoint:(CGPoint){0, 0}];
         // make gradient stop at lower-right
-        [gradientLayer setEndPoint:(CGPoint){1, 1}];
+        [gradientView setEndPoint:(CGPoint){1, 1}];
     }
     return self;
 }
@@ -122,5 +132,7 @@
     }
     return preferences.window;
 }
+
+
 
 @end

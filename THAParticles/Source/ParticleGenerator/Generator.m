@@ -36,13 +36,26 @@
     // negative or positive multiplication of y-axis
     float yMul = SSRandomIntBetween(1, 0) ? 1: -1;
     
-    CGPoint v;
     
-    // assign axis velocities
-    v.x = [self generateVelocity] * xMul;
-    v.y = [self generateVelocity] * yMul;
+    CGPoint v;                              // temporary velocity value
+    v.x = [self generateVelocity] * xMul;   // + or - x velocity
+    v.y = [self generateVelocity] * yMul;   // + or - y velocity
+    p.velocity = v;                         // set velocity
     
-    p.velocity = v;
+    
+    // if the user prefers to make particles appear suddenly
+    if ([PreferencesHandler.sharedInstance smoothAppearance] == PreferencesSmoothAppearanceStyleNone) {
+        
+        // make particle opaque.
+        p.alpha = 1;
+    } else {
+        
+        // start particle as transparent.
+        // this value will be increased accordingly.
+        p.alpha = 0;
+        
+    }
+    
     
     return p;
     

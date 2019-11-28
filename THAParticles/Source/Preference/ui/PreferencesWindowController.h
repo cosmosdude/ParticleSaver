@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @property IBOutlet NSButton* buttonForShouldShowCircles;
+@property IBOutlet NSPopUpButton* buttonForShouldSmoothAppearance;
 
 @property IBOutlet NSPopUpButton* buttonForThemeSelection;
 

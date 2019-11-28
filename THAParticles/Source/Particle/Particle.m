@@ -90,12 +90,27 @@
         // reverse the relative distance.
         relativeDistance = 1-relativeDistance;
         
-        // make strong or weak white color according to the relative value.
-        //
-        // Max color alpha should be 0.5 because another particle might draw another line to this particle.
-        //
-        // make the color as stroke value.
-        [[NSColor colorWithWhite:1 alpha:relativeDistance * 0.5] setStroke];
+        // if the preferences is not to draw smooth line,
+        // draw the links suddenly
+        if ([PreferencesHandler.sharedInstance smoothAppearance] == PreferencesSmoothAppearanceStyleNone) {
+            
+            // make strong white color
+            //
+            // make the color as stroke value.
+            [[NSColor colorWithWhite:1 alpha: 1] setStroke];
+            
+        } else {
+            
+            // make strong or weak white color according to the relative value.
+            //
+            // Max color alpha should be 0.5 because another particle might draw another line to this particle.
+            //
+            // make the color as stroke value.
+            [[NSColor colorWithWhite:1 alpha: relativeDistance * 0.5 * [self alpha] * [p alpha] ] setStroke];
+            
+        }
+        
+        
         
         // if the saver is in preview mode
         if (PreviewToken.isPreview) {
@@ -132,13 +147,15 @@
     // mark circle.
     [_ctx appendBezierPathWithOvalInRect:(NSRect) {p, _size}];
     
-    // fill zero alpha
-    [NSColor.whiteColor setFill];
-    [_ctx fill];
-    
-    // stroke white color.
-    // [NSColor.whiteColor setStroke];
-    // [_ctx stroke];
+    if (PreferencesHandler.sharedInstance.smoothAppearance != PreferencesSmoothAppearanceStyleNone) {
+        // fill potential non opaque alpha.
+        [[NSColor colorWithWhite:1 alpha: self.alpha] setFill];
+        [_ctx fill];
+    } else {
+        // fill opaque white
+        [NSColor.whiteColor setFill];
+        [_ctx fill];
+    }
     
     // remove all points after drawing.
     [_ctx removeAllPoints];

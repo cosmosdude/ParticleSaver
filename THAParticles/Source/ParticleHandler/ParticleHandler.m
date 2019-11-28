@@ -48,6 +48,17 @@
             
             // move the particle
             [self moveParticle:p];
+            
+            if (p.alpha < 1) {
+                
+                if (PreferencesHandler.sharedInstance.smoothAppearance == PreferencesSmoothAppearanceStyleFadeIn)
+                {
+                    p.alpha += 0.01;
+                } else {
+                    p.alpha += 0.1;
+                }
+            }
+            
         }
         
         // loop through particles.
@@ -73,6 +84,7 @@
                     [p markVacinityLineTo:pp usingLine:_vacinityLine];
                     
                     
+                    /* Particle collision is disabled for a while.
                     
                     // if the two particles collide each other,
                     // reduce their speed.
@@ -91,6 +103,8 @@
                         p.velocity = v1;
                         pp.velocity = v2;
                     }
+                     
+                    */
                 }
             }
         }

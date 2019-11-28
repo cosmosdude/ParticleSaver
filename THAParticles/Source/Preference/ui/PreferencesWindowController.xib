@@ -10,6 +10,7 @@
                 <outlet property="buttonForParticleLimitSelection" destination="aAq-n0-Jbl" id="IoQ-c3-5MD"/>
                 <outlet property="buttonForParticleSpeedSelection" destination="fCv-yS-NUR" id="b0e-3C-F98"/>
                 <outlet property="buttonForShouldShowCircles" destination="D4N-di-BSe" id="fcU-z1-8F8"/>
+                <outlet property="buttonForShouldSmoothAppearance" destination="SoC-q1-52b" id="MSs-DS-iSu"/>
                 <outlet property="buttonForThemeSelection" destination="1hM-Ix-hMf" id="HJK-FY-lmE"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
@@ -19,11 +20,11 @@
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="196" y="240" width="580" height="266"/>
+            <rect key="contentRect" x="196" y="240" width="580" height="326"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
             <value key="maxSize" type="size" width="330" height="200"/>
             <view key="contentView" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="580" height="266"/>
+                <rect key="frame" x="0.0" y="0.0" width="580" height="326"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0Uq-Sm-94j">
@@ -42,7 +43,7 @@
                         </connections>
                     </button>
                     <button focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="D4N-di-BSe">
-                        <rect key="frame" x="540" y="227" width="22" height="18"/>
+                        <rect key="frame" x="540" y="287" width="22" height="18"/>
                         <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="left" focusRingType="none" inset="2" id="mcx-yf-sJS">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
@@ -52,7 +53,7 @@
                         </connections>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lDo-k2-d7p">
-                        <rect key="frame" x="18" y="226" width="82" height="20"/>
+                        <rect key="frame" x="18" y="286" width="82" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="qO1-IM-53v"/>
                         </constraints>
@@ -63,7 +64,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hj6-CK-mqL">
-                        <rect key="frame" x="18" y="177" width="45" height="20"/>
+                        <rect key="frame" x="18" y="198" width="45" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="dCs-ZH-Pf3"/>
                         </constraints>
@@ -74,7 +75,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fZV-9m-KwT">
-                        <rect key="frame" x="18" y="128" width="66" height="20"/>
+                        <rect key="frame" x="18" y="149" width="66" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="LbN-dO-Uxb"/>
                         </constraints>
@@ -85,15 +86,34 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="1v8-RG-4da">
-                        <rect key="frame" x="18" y="212" width="544" height="14"/>
+                        <rect key="frame" x="18" y="272" width="544" height="14"/>
                         <textFieldCell key="cell" title="Specify whether the connection points are rendered at the link points." id="9E4-lY-IL5">
                             <font key="font" size="11" name="AveriaSansLibre-Regular"/>
                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wlz-jy-Cwr">
+                        <rect key="frame" x="18" y="242" width="76" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="cvE-3a-hzb"/>
+                        </constraints>
+                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Appearance" id="213-sr-s9J">
+                            <font key="font" size="14" name="AveriaSansLibre-Regular"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="VB2-ql-mce">
+                        <rect key="frame" x="18" y="228" width="544" height="14"/>
+                        <textFieldCell key="cell" title="Specify how the screen saver initiate the contents." id="3KW-fx-Xlw">
+                            <font key="font" size="11" name="AveriaSansLibre-Regular"/>
+                            <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="7f8-aU-EGh">
-                        <rect key="frame" x="18" y="163" width="544" height="14"/>
+                        <rect key="frame" x="18" y="184" width="544" height="14"/>
                         <textFieldCell key="cell" title="Graphic color theme of the screen contents." id="9iu-7t-TX5">
                             <font key="font" size="11" name="AveriaSansLibre-Regular"/>
                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -101,7 +121,7 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="1Rg-22-xj2">
-                        <rect key="frame" x="18" y="100" width="544" height="28"/>
+                        <rect key="frame" x="18" y="121" width="544" height="28"/>
                         <textFieldCell key="cell" id="ZJ1-NE-Hpi">
                             <font key="font" size="11" name="AveriaSansLibre-Regular"/>
                             <string key="title">Specify how many dots are rendered. Setting this value higher than normal can lead to performance drop. This takes effect only in preview or full-screen mode.</string>
@@ -110,7 +130,7 @@
                         </textFieldCell>
                     </textField>
                     <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1hM-Ix-hMf">
-                        <rect key="frame" x="458" y="176" width="105" height="25"/>
+                        <rect key="frame" x="458" y="197" width="105" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="Nx1-Kv-lL8"/>
                         </constraints>
@@ -130,7 +150,7 @@
                         </connections>
                     </popUpButton>
                     <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aAq-n0-Jbl">
-                        <rect key="frame" x="458" y="127" width="105" height="25"/>
+                        <rect key="frame" x="458" y="148" width="105" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="Up1-we-RJh"/>
                         </constraints>
@@ -150,7 +170,7 @@
                         </connections>
                     </popUpButton>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="s6X-5X-uBK">
-                        <rect key="frame" x="18" y="70" width="92" height="20"/>
+                        <rect key="frame" x="18" y="91" width="92" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="Zdj-Vn-9Np"/>
                         </constraints>
@@ -161,7 +181,7 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="YL6-xj-6Tm">
-                        <rect key="frame" x="18" y="56" width="544" height="14"/>
+                        <rect key="frame" x="18" y="77" width="544" height="14"/>
                         <textFieldCell key="cell" title="Specify how much a particle moves per second. This takes effect only in preview or full-screen mode." id="Zof-Z9-nVr">
                             <font key="font" size="11" name="AveriaSansLibre-Regular"/>
                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -169,16 +189,16 @@
                         </textFieldCell>
                     </textField>
                     <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fCv-yS-NUR">
-                        <rect key="frame" x="458" y="69" width="105" height="25"/>
+                        <rect key="frame" x="458" y="90" width="105" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="J8C-aT-6w3"/>
                         </constraints>
-                        <popUpButtonCell key="cell" type="push" title="Few" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="7dV-DS-Q4c" id="Ug6-2W-xUm">
+                        <popUpButtonCell key="cell" type="push" title="Slow" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="7dV-DS-Q4c" id="Ug6-2W-xUm">
                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" size="11" name="AveriaSansLibre-Bold"/>
                             <menu key="menu" id="uHl-ug-PL3">
                                 <items>
-                                    <menuItem title="Few" state="on" id="7dV-DS-Q4c"/>
+                                    <menuItem title="Slow" state="on" id="7dV-DS-Q4c"/>
                                     <menuItem title="White" id="YRU-pT-edk"/>
                                     <menuItem title="White" id="jnf-Gt-M6O"/>
                                 </items>
@@ -188,20 +208,43 @@
                             <action selector="actionForParticleSpeedSelection:" target="-2" id="htJ-mK-m5u"/>
                         </connections>
                     </popUpButton>
+                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SoC-q1-52b">
+                        <rect key="frame" x="458" y="238" width="105" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="gJr-uM-Luf"/>
+                        </constraints>
+                        <popUpButtonCell key="cell" type="push" title="Gradient" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="sd4-si-9Hz" id="l4Y-3n-vk7">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" size="11" name="AveriaSansLibre-Bold"/>
+                            <menu key="menu" id="fEL-Ky-kZN">
+                                <items>
+                                    <menuItem title="Gradient" state="on" id="sd4-si-9Hz"/>
+                                    <menuItem title="White" id="eS2-ix-6aY"/>
+                                    <menuItem title="White" id="38f-dR-ctz"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                        <connections>
+                            <action selector="actionForSmoothAppearanceSelection:" target="-2" id="abD-4K-qh8"/>
+                        </connections>
+                    </popUpButton>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="1hM-Ix-hMf" secondAttribute="trailing" constant="20" id="3hS-bf-qGC"/>
                     <constraint firstAttribute="trailing" secondItem="7f8-aU-EGh" secondAttribute="trailing" constant="20" id="4C0-cN-P3s"/>
+                    <constraint firstAttribute="trailing" secondItem="SoC-q1-52b" secondAttribute="trailing" constant="20" id="6Gw-dL-hi4"/>
                     <constraint firstItem="fCv-yS-NUR" firstAttribute="top" secondItem="s6X-5X-uBK" secondAttribute="top" constant="-3" id="6ou-fS-qx2"/>
                     <constraint firstAttribute="trailing" secondItem="aAq-n0-Jbl" secondAttribute="trailing" constant="20" id="7rp-ie-irI"/>
+                    <constraint firstItem="Wlz-jy-Cwr" firstAttribute="top" secondItem="1v8-RG-4da" secondAttribute="bottom" constant="10" id="8cN-8o-jvo"/>
                     <constraint firstAttribute="trailing" secondItem="1Rg-22-xj2" secondAttribute="trailing" constant="20" id="923-yi-4zt"/>
                     <constraint firstItem="1v8-RG-4da" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="CFQ-2C-FLl"/>
                     <constraint firstItem="aAq-n0-Jbl" firstAttribute="top" secondItem="fZV-9m-KwT" secondAttribute="top" constant="-3" id="IB1-K7-N08"/>
                     <constraint firstItem="s6X-5X-uBK" firstAttribute="top" secondItem="1Rg-22-xj2" secondAttribute="bottom" constant="10" id="JgE-oi-3O5"/>
                     <constraint firstAttribute="trailing" secondItem="0Uq-Sm-94j" secondAttribute="trailing" constant="20" id="LgI-8v-Lyd"/>
                     <constraint firstItem="1hM-Ix-hMf" firstAttribute="top" secondItem="hj6-CK-mqL" secondAttribute="top" constant="-3" id="M9D-4r-J6V"/>
-                    <constraint firstItem="hj6-CK-mqL" firstAttribute="top" secondItem="1v8-RG-4da" secondAttribute="bottom" constant="15" id="NGg-QD-IAE"/>
+                    <constraint firstItem="VB2-ql-mce" firstAttribute="top" secondItem="Wlz-jy-Cwr" secondAttribute="bottom" id="OjF-fm-Ewm"/>
                     <constraint firstAttribute="trailing" secondItem="D4N-di-BSe" secondAttribute="trailing" constant="20" id="Q6y-1W-7hC"/>
+                    <constraint firstItem="Wlz-jy-Cwr" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="SbG-cB-UYc"/>
                     <constraint firstItem="lDo-k2-d7p" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="X5f-KR-yls"/>
                     <constraint firstItem="D4N-di-BSe" firstAttribute="centerY" secondItem="lDo-k2-d7p" secondAttribute="centerY" id="XMQ-bT-V7a"/>
                     <constraint firstItem="7f8-aU-EGh" firstAttribute="top" secondItem="hj6-CK-mqL" secondAttribute="bottom" id="XOV-ER-UvQ"/>
@@ -213,19 +256,23 @@
                     <constraint firstItem="1v8-RG-4da" firstAttribute="top" secondItem="lDo-k2-d7p" secondAttribute="bottom" id="ha4-oN-NYa"/>
                     <constraint firstItem="lDo-k2-d7p" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="20" id="kKu-jc-bMX"/>
                     <constraint firstItem="1Rg-22-xj2" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="lfr-ZS-jy8"/>
+                    <constraint firstItem="SoC-q1-52b" firstAttribute="top" secondItem="Wlz-jy-Cwr" secondAttribute="top" id="nOW-dx-bTz"/>
                     <constraint firstItem="fZV-9m-KwT" firstAttribute="top" secondItem="7f8-aU-EGh" secondAttribute="bottom" constant="15" id="nvn-QX-m9h"/>
                     <constraint firstAttribute="trailing" secondItem="1v8-RG-4da" secondAttribute="trailing" constant="20" id="p2h-Rg-3uE"/>
+                    <constraint firstItem="hj6-CK-mqL" firstAttribute="top" secondItem="VB2-ql-mce" secondAttribute="bottom" constant="10" id="rfc-3m-l54"/>
                     <constraint firstItem="YL6-xj-6Tm" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="rje-QN-Z8B"/>
                     <constraint firstAttribute="trailing" secondItem="fCv-yS-NUR" secondAttribute="trailing" constant="20" id="rvZ-7s-sBL"/>
                     <constraint firstItem="s6X-5X-uBK" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="v1h-Tx-WQh"/>
                     <constraint firstItem="hj6-CK-mqL" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="xSd-Dd-VW5"/>
                     <constraint firstAttribute="trailing" secondItem="YL6-xj-6Tm" secondAttribute="trailing" constant="20" id="xZ0-W0-3FP"/>
+                    <constraint firstAttribute="trailing" secondItem="VB2-ql-mce" secondAttribute="trailing" constant="20" id="yEh-uU-C2G"/>
+                    <constraint firstItem="VB2-ql-mce" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="20" id="zSf-S8-riX"/>
                 </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="229" y="120"/>
+            <point key="canvasLocation" x="229" y="150"/>
         </window>
     </objects>
 </document>
