@@ -23,8 +23,10 @@
             // make a small pool of particles for fitting inside a small draw area.
             pool = [[ParticlePool alloc] initWithParticleLimit:15];
         } else {
+            
+            int particleMultiplier = (int)PreferencesHandler.sharedInstance.particleCount + 1;
             // otherwise, make a large pool of particles for fitting inside a large screen.
-            pool = [[ParticlePool alloc] initWithParticleLimit:75];
+            pool = [[ParticlePool alloc] initWithParticleLimit:particleMultiplier * 25];
         }
         
         // make handle

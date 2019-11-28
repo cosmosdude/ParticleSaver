@@ -56,8 +56,10 @@
     if (PreviewToken.isPreview) {
         return SSRandomFloatBetween(0.1, 0.5);
     } else {
+        CGFloat maxSpeed = ((CGFloat)PreferencesHandler.sharedInstance.particleSpeed + 1) * 0.5;
+        
         // otherwise, make slow-fast velocities.
-        return SSRandomFloatBetween(0.1, 2);
+        return SSRandomFloatBetween(0.1, maxSpeed);
     }
     
     

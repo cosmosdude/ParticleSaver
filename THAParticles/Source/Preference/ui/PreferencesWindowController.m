@@ -34,15 +34,42 @@
     _buttonForShouldShowCircles.state = (PreferencesHandler.sharedInstance.shouldShowCircles == YES) ? NSControlStateValueOn : NSControlStateValueOff;
     
     // Configure theme selection button
+    BOOL isBNG = [PreferencesHandler.sharedInstance getIsBlackAndWhiteTheme];
     [_buttonForThemeSelection removeAllItems];
     [_buttonForThemeSelection addItemsWithTitles: themeNames];
-    
-    BOOL isBNG = [PreferencesHandler.sharedInstance getIsBlackAndWhiteTheme];
     [_buttonForThemeSelection selectItemAtIndex: isBNG];
     [_buttonForThemeSelection setTitle: [themeNames objectAtIndex:isBNG] ];
     
 
+    particleLimitNames = @[
+        @"Few", // 25
+        @"Normal", // 50
+        @"Many", // 75
+        @"Too Many" // 100
+    ];
     
+    NSInteger particleLimit = PreferencesHandler.sharedInstance.particleCount;
+    [_buttonForParticleLimitSelection removeAllItems];
+    [_buttonForParticleLimitSelection addItemsWithTitles: particleLimitNames];
+    [_buttonForParticleLimitSelection selectItemAtIndex: particleLimit];
+    [_buttonForParticleLimitSelection setTitle: [particleLimitNames objectAtIndex:particleLimit]];
+    
+    
+    NSArray<NSString *> * particleSpeedNames = @[
+        @"Slowest",
+        @"Slower",
+        @"Slow",
+        @"Normal",
+        @"Fast",
+        @"Faster",
+        @"Fastest"
+    ];
+    
+    NSInteger particleSpeed = PreferencesHandler.sharedInstance.particleSpeed;
+    [_buttonForParticleSpeedSelection removeAllItems];
+    [_buttonForParticleSpeedSelection addItemsWithTitles: particleSpeedNames];
+    [_buttonForParticleSpeedSelection selectItemAtIndex: particleSpeed];
+    [_buttonForParticleSpeedSelection setTitle: [particleSpeedNames objectAtIndex:particleSpeed]];
 }
 
 - (IBAction) doneWithSender:(id) sender {
@@ -59,6 +86,17 @@
 - (IBAction)actionForThemeSelection:(id)sender {
     NSPopUpButton* btn = sender;
     [[PreferencesHandler sharedInstance] setIsBlackAndWhiteTheme:btn.indexOfSelectedItem];
+}
+
+- (IBAction)actionForParticleLimitSelection:(id)sender {
+    NSPopUpButton* btn = sender;
+    [[PreferencesHandler sharedInstance] setParticleCount: btn.indexOfSelectedItem];
+}
+
+
+- (IBAction)actionForParticleSpeedSelection:(id)sender {
+    NSPopUpButton* btn = sender;
+    [[PreferencesHandler sharedInstance] setParticleSpeed: btn.indexOfSelectedItem];
 }
 
 @end

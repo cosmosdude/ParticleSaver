@@ -16,16 +16,23 @@
         
         kPreferencesKeyShouldShowCircles = @"shouldShowDots";
         kPreferencesKeyIsGradientTheme = @"isGradientTheme";
+        kPreferencesKeyParticleCount = @"particleCount";
+        kPreferencesKeyParticleSpeed = @"particleSpeed";
+        
         NSString * suitName = [NSBundle.mainBundle bundleIdentifier];
         defaults = [ScreenSaverDefaults defaultsForModuleWithName:suitName];
         
         [defaults registerDefaults:@{
             kPreferencesKeyShouldShowCircles: @YES,
             kPreferencesKeyIsGradientTheme: @NO,
+            kPreferencesKeyParticleCount: @1,
+            kPreferencesKeyParticleSpeed: @1
         }];
         
         _shouldShowCircles = [defaults boolForKey:kPreferencesKeyShouldShowCircles];
         _isBlackAndWhiteTheme = [defaults boolForKey:kPreferencesKeyIsGradientTheme];
+        _particleCount = [defaults integerForKey:kPreferencesKeyParticleCount];
+        _particleSpeed = [defaults integerForKey:kPreferencesKeyParticleSpeed];
     }
     return self;
 }
@@ -64,6 +71,26 @@
 -(void) setIsBlackAndWhiteTheme:(BOOL)isGradientTheme {
     [defaults setBool:isGradientTheme forKey:kPreferencesKeyIsGradientTheme];
     _isBlackAndWhiteTheme = isGradientTheme;
+    [self save];
+}
+
+#pragma mark ParticleCount setter
+-(BOOL) getParticleCount {
+    return _particleCount;
+}
+- (void)setParticleCount:(NSInteger)particleCount {
+    [defaults setInteger:particleCount forKey:kPreferencesKeyParticleCount];
+    _particleCount = particleCount;
+    [self save];
+}
+
+#pragma mark ParticleSpeed s&g
+-(BOOL) getParticleSpeed {
+    return _particleSpeed;
+}
+-(void) setParticleSpeed:(NSInteger)particleSpeed {
+    [defaults setInteger:particleSpeed forKey:kPreferencesKeyParticleSpeed];
+    _particleSpeed = particleSpeed;
     [self save];
 }
 

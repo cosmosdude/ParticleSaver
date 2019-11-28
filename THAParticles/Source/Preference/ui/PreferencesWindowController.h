@@ -15,11 +15,19 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PreferencesWindowController : NSWindowController
 {
     NSArray<NSString *> * themeNames;
+    NSArray<NSString *> * particleLimitNames;
+    NSArray<NSString *> * particleSpeedNames;
 }
 
 
 @property IBOutlet NSButton* buttonForShouldShowCircles;
+
 @property IBOutlet NSPopUpButton* buttonForThemeSelection;
+
+@property IBOutlet NSPopUpButton* buttonForParticleLimitSelection;
+
+@property IBOutlet NSPopUpButton* buttonForParticleSpeedSelection;
+
 - (IBAction) doneWithSender:(id) sender;
 
 @end

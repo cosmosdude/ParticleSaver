@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
     
     NSString * kPreferencesKeyShouldShowCircles;
     NSString * kPreferencesKeyIsGradientTheme;
+    NSString * kPreferencesKeyParticleCount;
+    NSString * kPreferencesKeyParticleSpeed;
 }
 @property(nonatomic) BOOL shouldShowCircles;
 -(BOOL) getShouldShowCircles;
@@ -26,6 +28,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic) BOOL isBlackAndWhiteTheme;
 -(BOOL) getIsBlackAndWhiteTheme;
 -(void) setIsBlackAndWhiteTheme:(BOOL) isGradientTheme;
+
+@property(nonatomic) NSInteger particleCount;
+-(BOOL) getParticleCount;
+-(void) setParticleCount:(NSInteger)particleCount;
+
+@property(nonatomic) NSInteger particleSpeed;
+-(BOOL) getParticleSpeed;
+-(void) setParticleSpeed:(NSInteger)particleSpeed;
 
 - (instancetype)init;
 
