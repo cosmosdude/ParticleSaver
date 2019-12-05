@@ -22,6 +22,18 @@
     if (self) {
         [self setAnimationTimeInterval:1/30.0];
         
+        // NSNib * nib = [[NSNib alloc] initWithNibNamed:@"THAParticlesView" bundle:[NSBundle mainBundle]];
+        // NSArray * views;
+        // [nib instantiateWithOwner:self topLevelObjects:&views];
+        // NSWindow * nibWindow = [views objectAtIndex:0];
+        // NSView * contentView = (id)nibWindow;
+        // [self addSubview: contentView];
+        
+        // contentView.frame = frame;
+        // [contentView setWantsLayer:YES];
+        // contentView.layer.backgroundColor = [[NSColor whiteColor] CGColor];
+        
+        
         // make gradient view
         gradientView = [GradientView new];
         // and make it to use layer.

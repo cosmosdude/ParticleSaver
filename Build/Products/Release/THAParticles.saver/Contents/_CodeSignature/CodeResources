@@ -6,7 +6,11 @@
 	<dict>
 		<key>Resources/PreferencesWindowController.nib</key>
 		<data>
-		slOA301afi96JXFwX1I+bQ9EGto=
+		1fTa0z2MHPcKsFhmGZv4dvt92Ps=
+		</data>
+		<key>Resources/THAParticlesView.nib</key>
+		<data>
+		scZKSE08awir07HDrsoYC2E325s=
 		</data>
 		<key>Resources/Trimmed.gif</key>
 		<data>
@@ -27,7 +31,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			eXJkUqxv5Mi79XqZMV8D4au+VSEkN2xks+R9iJG9mP8=
+			nf17pJdj/14cvOKczhUROTnyFUdFLyseaFGf/zDVo9U=
+			</data>
+		</dict>
+		<key>Resources/THAParticlesView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			mUEhHvAvZWLVdQY7dPT1qxy2j9FUlZ9pJunjv4o5YJY=
 			</data>
 		</dict>
 		<key>Resources/Trimmed.gif</key>

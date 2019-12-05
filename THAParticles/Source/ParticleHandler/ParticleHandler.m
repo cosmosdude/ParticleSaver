@@ -16,6 +16,7 @@
         
         // initialize the vacinity line.
         _vacinityLine = [NSBezierPath new];
+        [_vacinityLine setLineCapStyle:NSLineCapStyleRound];
     }
     return self;
 }

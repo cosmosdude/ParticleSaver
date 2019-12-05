@@ -30,5 +30,7 @@ BOOL isPreview = false;
     
     // Preferences controller
     PreferencesWindowController * preferences;
+    
+    NSTextField * giftLabel;
 }
 @end

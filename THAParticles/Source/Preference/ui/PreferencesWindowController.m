@@ -50,7 +50,7 @@
     NSInteger smoothAppearance = PreferencesHandler.sharedInstance.smoothAppearance;
     [_buttonForShouldSmoothAppearance removeAllItems];
     [_buttonForShouldSmoothAppearance addItemsWithTitles: smoothAppearanceNames];
-    [_buttonForShouldSmoothAppearance selectItemAtIndex: smoothAppearanceNames];
+    [_buttonForShouldSmoothAppearance selectItemAtIndex: smoothAppearance];
     [_buttonForShouldSmoothAppearance setTitle: [smoothAppearanceNames objectAtIndex:smoothAppearance]];
     
 
